@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.game-container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(7, 0, 0, 0.7);
+    border-radius: 10px;
+    width: 600px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.arena {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #fff;
+    position: relative;
+    background-color: #fcfbfb;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.player {
+    width: 50px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    transition: transform 0.1s;
+}
+
+#player1 {
+    left: 50px;
+    background-image: url('stickman\ 1.png');
+}
+
+#player2 {
+    right: 50px;
+    background-image: url('vegeta.png');
+    transform: scaleX(-1);
+    
+}
+
+
+.health {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.controls {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+

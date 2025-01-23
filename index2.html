@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Tebak Angka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Tebak Angka</h1>
+    <p>Tebak angka dari 1 hingga 10:</p>
+    <input type="number" id="guessInput" min="1" max="10" placeholder="Masukkan angka">
+    <button onclick="guessNumber()">Tebak</button>
+
+    <div class="result" id="resultMessage"></div>
+
+    <script>
+        // Angka acak antara 1 hingga 10
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        let attempts = 0;
+
+        function guessNumber() {
+            const userGuess = parseInt(document.getElementById("guessInput").value);
+            const resultMessage = document.getElementById("resultMessage");
+            attempts++;
+
+            if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
+                resultMessage.textContent = "Masukkan angka yang valid antara 1 hingga 10.";
+                return;
+            }
+
+            if (userGuess === randomNumber) {
+                resultMessage.textContent = `Selamat! Anda menebak angka yang benar (${randomNumber}) dalam ${attempts} percobaan.`;
+            } else if (userGuess > randomNumber) {
+                resultMessage.textContent = "Tebakan Anda terlalu tinggi, coba lagi.";
+            } else {
+                resultMessage.textContent = "Tebakan Anda terlalu rendah, coba lagi.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
